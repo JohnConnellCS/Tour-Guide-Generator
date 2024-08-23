@@ -53,14 +53,28 @@ void print_tour(vector<TourCommand>& tcs)
     cout << "Total tour distance: " << std::fixed << std::setprecision(3) << total_dist << " miles\n";
 }
 
-int main()
+int main(int argc, char* argv[])
 {
+    if (argc != 2) {
+        std::cerr << "Usage: " << argv[0] << " <POI file>" << std::endl;
+        return 1;
+    }
+
+    std::string poi_file = argv[1];
+    Stops s;
+    if (!s.load(poi_file)) {
+        std::cerr << "Failed to load POI data from " << poi_file << std::endl;
+        return 1;
+    }
+
     GeoDatabase t;
     t.load("MapData.txt");
     const Router r(t);
-    Stops s;
-    s.load("LandmarksToVisit.txt");
+
     TourGenerator tg(t, r);
     vector<TourCommand> commd = tg.generate_tour(s);
     print_tour(commd);
+
+    return 0;
 }
+
