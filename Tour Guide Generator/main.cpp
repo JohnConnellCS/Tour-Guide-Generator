@@ -53,6 +53,24 @@ void print_tour(vector<TourCommand>& tcs)
     cout << "Total tour distance: " << std::fixed << std::setprecision(3) << total_dist << " miles\n";
 }
 
+
+//printing for debugging
+/*void print_file_contents(const std::string& file_path) {
+    std::ifstream file(file_path);
+
+    if (!file.is_open()) {
+        std::cerr << "Error: Could not open file " << file_path << std::endl;
+        return;
+    }
+
+    std::string line;
+    while (std::getline(file, line)) {
+        std::cout << line << std::endl;
+    }
+
+    file.close();
+}*/
+
 int main(int argc, char* argv[])
 {
     if (argc != 2) {
@@ -61,6 +79,7 @@ int main(int argc, char* argv[])
     }
 
     std::string poi_file = argv[1];
+
     Stops s;
     if (!s.load(poi_file)) {
         std::cerr << "Failed to load POI data from " << poi_file << std::endl;
@@ -77,4 +96,3 @@ int main(int argc, char* argv[])
 
     return 0;
 }
-

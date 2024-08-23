@@ -23,10 +23,14 @@ def generate_route():
                     temp_file.write(f"{poi}|{description}\n")
             temp_file_path = temp_file.name
 
+        # Change the directory to where robot.exe is located
+        subprocess.run(['cd', "./Tour Guide Generator"], shell=True)
+        
         # Call the C++ program with the temporary file as input
-        result = subprocess.run(['./Tour Guide Generator/robot', temp_file_path], capture_output=True, text=True)
+        result = subprocess.run(['./robot', temp_file_path], capture_output=True, text=True)
         output = result.stdout
         os.remove(temp_file_path)
+
         return jsonify({"route": output})
 
     except Exception as e:
