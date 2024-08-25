@@ -87,7 +87,7 @@ int main(int argc, char* argv[])
     }
 
     GeoDatabase t;
-    t.load("MapData.txt");
+    t.load("./Tour Guide Generator/MapData.txt");
     const Router r(t);
 
     TourGenerator tg(t, r);
