@@ -37,9 +37,11 @@ Input Format
     Ackerman Union, Kerckhoff Hall, Student Activities Center, Ami Sushi, Barney's Beanery, Five Guys, Regent, Diddy Riese, Fox Theater, Mr. Noodle, Harvard-Westlake Middle School
   To format your input, put the valid location name followed by a description separated by a "|"
     Example:
+    
       Diddy Riese|This is where you get cheap yummy cookies.
       Ami Sushi|Enjoy some raw fish here.
       Fox Theater|Watch a movie premiere here with the big shots.
+      
   After inserting a valid input, the program will output directions that a tour guide robot would follow. This includes how far to go on each road, where to turn, and the ouputting
   of the descriptions you add.
 
