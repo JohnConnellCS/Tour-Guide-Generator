@@ -20,10 +20,8 @@ Project Setup:
     3. Install Python dependencies:
     pip install -r requirements.txt
     4. Build the C++ project:
-      cd “Tour Guide Generator” #this is different from the project directory that contains dashes
-      g++ main.cpp geodb.cpp router.cpp tour_generator.cpp -o robot
+      g++ ".\Tour Guide Generator\main.cpp" ".\Tour Guide Generator\router.cpp" ".\Tour Guide Generator\tour_generator.cpp" ".\Tour Guide Generator\geodb.cpp" -o robot
     5. Run the Flask server
-      cd .. #if you're still in the Tour Guide Generator directory
       flask run
   Front End
     1. cd my-app
@@ -37,9 +35,11 @@ Input Format
     Ackerman Union, Kerckhoff Hall, Student Activities Center, Ami Sushi, Barney's Beanery, Five Guys, Regent, Diddy Riese, Fox Theater, Mr. Noodle, Harvard-Westlake Middle School
   To format your input, put the valid location name followed by a description separated by a "|"
     Example:
-      Diddy Riese|This is where you get cheap yummy cookies.
-      Ami Sushi|Enjoy some raw fish here.
-      Fox Theater|Watch a movie premiere here with the big shots.
+    
+    Diddy Riese|This is where you get cheap yummy cookies.
+    Ami Sushi|Enjoy some raw fish here.
+    Fox Theater|Watch a movie premiere here with the big shots.
+      
   After inserting a valid input, the program will output directions that a tour guide robot would follow. This includes how far to go on each road, where to turn, and the ouputting
   of the descriptions you add.
 
